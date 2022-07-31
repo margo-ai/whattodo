@@ -5,6 +5,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 5px;
+        margin-bottom: 5px;
         min-height: 40px;       
         &__label {
             width: 80%;
@@ -44,7 +45,8 @@
 
 
     .item__checkbox:checked + .item__checkbox-custom {
-        background: url("../../resources/icons/326572_check_icon.svg") center center no-repeat, linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(61,171,213,1) 50%, rgba(0,212,255,1) 100%);
+        background: url("../../resources/icons/326572_check_icon.svg") center center no-repeat, #00008B;
+        transition: background ease 0.5s;
     }    
 
    
@@ -77,10 +79,11 @@
         }
     }
     
-    
-    
+ 
 
 
 .complete-todo {
     text-decoration: line-through;
+    color: #D3D3D3;
+    transition: color ease 0.5s;   
 }

@@ -2,14 +2,16 @@ import TodoItem from '../todoitem/TodoItem';
 
 import './todolist.scss';
 
-const TodoList = ({data}) => {
+const TodoList = ({data, toggleTodo, deleteTodo}) => {
 
-    const tasks = data.map(item => {
-        const {id, ...itemProps} = item;
+    const tasks = data.map(todo => {
+        // const {id, ...itemProps} = item;
         return (
             <TodoItem
-                key={id}
-                {...itemProps}
+                key={todo.id}
+                todo={todo}
+                toggleTodo={toggleTodo}
+                deleteTodo={deleteTodo}
             />
         )
     });
@@ -20,6 +22,7 @@ const TodoList = ({data}) => {
         </ul>
                 
     )
+    
 }
 
 export default TodoList;

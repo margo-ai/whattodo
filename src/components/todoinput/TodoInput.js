@@ -12,23 +12,14 @@ const TodoInput = ({addTodo}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (userInput.length < 3) {
+        if (userInput.length < 3 || userInput.length > 40) {
+            console.log('Введите от 3 до 40 символов');
+            setUserInput("");
             return;
         }
         addTodo(userInput);
         setUserInput("");
     }
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     const todoName = newTodoInput.current.value;
-    //     if (todoName === "") {
-    //         return
-    //     }
-    //     addTodo(newTodoInput);
-    //     setUserInput("");
-    // }
-
 
 
 
@@ -45,7 +36,7 @@ const TodoInput = ({addTodo}) => {
                 />
             <button 
                 type="submit"
-                className="addtodo__submit" onClick={() => addTodo()}>+</button>
+                className="addtodo__submit">+</button>
         </form>
     )
 }
