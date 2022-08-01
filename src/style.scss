@@ -3,6 +3,7 @@
 * {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 300;
+    font-size: 16px;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,3 +26,8 @@ body {
     
 }
 
+@media (max-width: 770px) {
+    * {
+        font-size: 14px;
+    }
+}

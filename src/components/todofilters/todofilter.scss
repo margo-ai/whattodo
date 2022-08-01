@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
 
-    min-height: 30px;
+    min-height: 60px;
     padding: 10px;
     background-color: #ffffff;
     border: 2px solid #00008B;
@@ -24,9 +24,10 @@
             background-color: #fff;
             transition: all 150ms linear 0s;
             &:hover {
-                opacity: 0.2;
+                opacity: 0.3;
             }
         }
+        
     }
 
     &__clear {
@@ -34,7 +35,29 @@
         background-color: #fff;
         transition: all 150ms linear 0s;
         &:hover {
-            opacity: 0.2;
+            opacity: 0.3;
+        }
+    }
+
+    .active-filter {
+        color: #fff;
+        padding: 3px;
+        background-color: #00008B;
+        border: 1px solid #00008B;
+        border-radius: 10px;        
+        transition: border 150ms linear 0s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    
+}
+
+@media (max-width: 770px) {
+    .filters {
+        min-height: 52px;
+        &__group {
+            width: 40%;
         }
     }
 }

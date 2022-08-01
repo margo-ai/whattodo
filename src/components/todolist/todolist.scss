@@ -8,3 +8,9 @@
     border-top: none;
     
 }
+
+@media (max-width: 770px) {
+    .list {
+        padding: 5px;
+    }
+}
