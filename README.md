@@ -22,5 +22,6 @@
 * HTML
 * CSS
 * Scss
+* Javascript
 * React
 * React-bootstrap
