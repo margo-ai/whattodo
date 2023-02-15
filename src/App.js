@@ -34,6 +34,8 @@ function App() {
 	const addTodo = (newTodoInput) => {
 		let todosCopy = [...todos];
 		todosCopy = [...todosCopy, {name: newTodoInput, done: false, id: todos.length + 1}];
+		console.log(todosCopy);
+		localStorage.setItem('todos', todosCopy);
 		setTodos(todosCopy);
 	}
 	

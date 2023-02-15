@@ -5,7 +5,6 @@ import './todolist.scss';
 const TodoList = ({data, toggleTodo, deleteTodo}) => {
 
     const tasks = data.map(todo => {
-        // const {id, ...itemProps} = item;
         return (
             <TodoItem
                 key={todo.id}
