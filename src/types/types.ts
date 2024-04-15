@@ -1,1 +1,1 @@
-export type Todo = { name: string; done: boolean; id: number };
+export type Todo = { name: string; done: boolean; id: string };

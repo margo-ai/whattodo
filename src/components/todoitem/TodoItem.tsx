@@ -7,8 +7,8 @@ import { Todo } from "src/types/types";
 
 type Props = {
   todo: Todo;
-  toggleTodo: (id: number) => void;
-  deleteTodo: (id: number) => void;
+  toggleTodo: (id: string) => void;
+  deleteTodo: (id: string) => void;
 };
 
 export const TodoItem = ({ todo, toggleTodo, deleteTodo }: Props) => {
@@ -27,7 +27,7 @@ export const TodoItem = ({ todo, toggleTodo, deleteTodo }: Props) => {
   return (
     <li className="item">
       <label className={labelClasses}>
-        <input type="checkbox" className="item__checkbox" onChange={handleToggle} />
+        <input type="checkbox" className="item__checkbox" checked={todo.done === true} onChange={handleToggle} />
         <span className="item__checkbox-custom"></span>
         {todo.name}
       </label>

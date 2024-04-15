@@ -6,8 +6,8 @@ import { Todo } from "src/types/types";
 
 type Props = {
   data: Todo[];
-  toggleTodo: (id: number) => void;
-  deleteTodo: (id: number) => void;
+  toggleTodo: (id: string) => void;
+  deleteTodo: (id: string) => void;
 };
 
 export const TodoList = ({ data, toggleTodo, deleteTodo }: Props) => {
