@@ -21,7 +21,7 @@ export const App = () => {
 
   // Count uncompleted todos
   const countRemaining = () => {
-    const remainingTasks = todos.filter((todo) => !todo.done);
+    const remainingTasks = todos?.filter((todo) => !todo.done);
     return remainingTasks.length;
   };
 
