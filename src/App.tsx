@@ -104,7 +104,7 @@ export const App = () => {
         <TodoInput addTodo={addTodo} />
         <TodoList data={filteredTodos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
         <TodoFilters
-          countRemaining={countRemaining}
+          countRemaining={countRemaining()}
           clearCompleted={clearCompleted}
           setFilter={setFilter}
           allFilterActive={allFilterActive}

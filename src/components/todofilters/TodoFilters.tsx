@@ -2,7 +2,7 @@ import React from "react";
 import "./todofilter.scss";
 
 type Props = {
-  countRemaining: () => number;
+  countRemaining: number;
   clearCompleted: () => void;
   setFilter: (filter: string) => void;
   allFilterActive: boolean;
@@ -33,7 +33,7 @@ export const TodoFilters = ({
   return (
     <div className="filters">
       <p className="filters__remaining" data-testid="countRemaining">
-        {countRemaining()} task left
+        {countRemaining} task left
       </p>
       <div className="filters__group">
         <button className={allFilterActive ? "filter active-filter" : "filter"} onClick={handleFilterAll}>
