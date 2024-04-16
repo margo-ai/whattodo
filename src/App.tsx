@@ -25,11 +25,12 @@ export const App = () => {
     return remainingTasks.length;
   };
 
+  // "Add to local storage" function
   const addToLocalStorage = (todos: Todo[]) => {
     localStorage.setItem("todos", JSON.stringify(todos));
   };
 
-  // Add todo
+  // Add new todo
   const addTodo = (newTodoInput: string) => {
     const newItem = { name: newTodoInput, done: false, id: uuidv4() };
     const todosCopy = [...todos, newItem];
@@ -38,7 +39,7 @@ export const App = () => {
     setTodos(todosCopy);
   };
 
-  //Toggle todo complete/not complete
+  // Toggle todo complete/not complete
   const toggleTodo = (id: string) => {
     const newtodos = [...todos];
     const selectedTask = todos.find((todo) => todo.id === id);
@@ -47,14 +48,14 @@ export const App = () => {
     setTodos(newtodos);
   };
 
-  //Delete todo when X clicked
+  // Delete todo when X clicked
   const deleteTodo = (id: string) => {
     const remainingTodos = todos.filter((todo) => todo.id !== id);
     addToLocalStorage(remainingTodos);
     setTodos(remainingTodos);
   };
 
-  //Clear all co,pleted todos
+  // Clear all completed todos
   const clearCompleted = () => {
     const remainingTodos = todos.filter((todo) => !todo.done);
     addToLocalStorage(remainingTodos);
@@ -66,11 +67,12 @@ export const App = () => {
     setTodos(todosFromLS);
   }, []);
 
-  //Change list displayed based on filter
+  // Change list displayed based on filter
   useEffect(() => {
     updateTodos();
   }, [todos, filter]);
 
+  // Function which filter todos
   const filterTodos = (todos: Todo[], completed: boolean, all: boolean, active: boolean) => {
     setFilteredTodos(todos);
     setCompletedFilterActive(completed);
@@ -78,6 +80,7 @@ export const App = () => {
     setActiveFilterActive(active);
   };
 
+  // Function which update todos
   const updateTodos = () => {
     switch (filter) {
       case "all":
