@@ -1,16 +1,14 @@
-
-.list {    
-    padding: 10px;
-    background-color: #ffffff;
-    border: 2px solid #00008B;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top: none;
-    
+.list {
+  padding: 15px;
+  background-color: #ffffff;
+  border: 2px solid #00008b;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: none;
 }
 
 @media (max-width: 770px) {
-    .list {
-        padding: 5px;
-    }
+  .list {
+    padding: 5px;
+  }
 }

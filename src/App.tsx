@@ -11,7 +11,7 @@ import { TodoFilters } from "./components/TodoFilters";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Todo } from "./types/types";
 
-function App() {
+export const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [filter, setFilter] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState<Todo[]>([]);
@@ -54,7 +54,7 @@ function App() {
     setTodos(remainingTodos);
   };
 
-  //Clear all copleted todos
+  //Clear all co,pleted todos
   const clearCompleted = () => {
     const remainingTodos = todos.filter((todo) => !todo.done);
     addToLocalStorage(remainingTodos);
@@ -79,14 +79,18 @@ function App() {
   };
 
   const updateTodos = () => {
-    if (filter === "all") {
-      filterTodos(todos, false, true, false);
-    } else if (filter === "active") {
-      const activeTodos = todos.filter((todo) => !todo.done);
-      filterTodos(activeTodos, false, false, true);
-    } else if (filter === "completed") {
-      const completedTodos = todos.filter((todo) => todo.done);
-      filterTodos(completedTodos, true, false, false);
+    switch (filter) {
+      case "all":
+        filterTodos(todos, false, true, false);
+        break;
+      case "active":
+        const activeTodos = todos.filter((todo) => !todo.done);
+        filterTodos(activeTodos, false, false, true);
+        break;
+      case "completed":
+        const completedTodos = todos.filter((todo) => todo.done);
+        filterTodos(completedTodos, true, false, false);
+        break;
     }
   };
 
@@ -107,6 +111,4 @@ function App() {
       </Container>
     </div>
   );
-}
-
-export default App;
+};

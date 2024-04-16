@@ -16,18 +16,18 @@ export const TodoItem = ({ todo, toggleTodo, deleteTodo }: Props) => {
     "complete-todo": todo.done === true,
   });
 
-  function handleToggle() {
+  const handleToggle = () => {
     toggleTodo(todo.id);
-  }
+  };
 
-  function handleDelete() {
+  const handleDelete = () => {
     deleteTodo(todo.id);
-  }
+  };
 
   return (
     <li className="item">
       <label className={labelClasses}>
-        <input type="checkbox" className="item__checkbox" checked={todo.done === true} onChange={handleToggle} />
+        <input type="checkbox" className="item__checkbox" checked={todo.done} onChange={handleToggle} />
         <span className="item__checkbox-custom"></span>
         {todo.name}
       </label>
