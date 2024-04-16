@@ -4,6 +4,7 @@
   "homepage": "https://margo-ai.github.io/whattodo",
   "main": "index.js",
   "scripts": {
+    "prestart": "npm i",
     "start": "webpack serve --mode development",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
