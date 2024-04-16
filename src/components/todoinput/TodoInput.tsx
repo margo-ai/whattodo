@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 
 import "./todoinput.scss";
 
@@ -15,19 +15,15 @@ export const TodoInput = ({ addTodo }: Props) => {
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    if (userInput.length < 3 || userInput.length > 40) {
-      console.log("Введите от 3 до 40 символов");
-      setUserInput("");
-      return;
-    }
     addTodo(userInput);
     setUserInput("");
   };
 
   return (
-    <form className="addtodo__block" onSubmit={handleSubmit}>
+    <form className="addtodo" onSubmit={handleSubmit}>
       <input
         className="addtodo__input"
+        data-testid="input"
         value={userInput}
         onChange={handleChange}
         type="text"

@@ -26,13 +26,15 @@ export const TodoFilters = ({
     setFilter("active");
   };
 
-  const handleFilterComplete = () => {
+  const handleFilterCompleted = () => {
     setFilter("completed");
   };
 
   return (
     <div className="filters">
-      <p className="filters__remaining">{countRemaining()} task left</p>
+      <p className="filters__remaining" data-testid="countRemaining">
+        {countRemaining()} task left
+      </p>
       <div className="filters__group">
         <button className={allFilterActive ? "filter active-filter" : "filter"} onClick={handleFilterAll}>
           All
@@ -40,7 +42,7 @@ export const TodoFilters = ({
         <button className={activeFilterActive ? "filter active-filter" : "filter"} onClick={handleFilterActive}>
           Active
         </button>
-        <button className={completedFilterActive ? "filter active-filter" : "filter"} onClick={handleFilterComplete}>
+        <button className={completedFilterActive ? "filter active-filter" : "filter"} onClick={handleFilterCompleted}>
           Completed
         </button>
       </div>
