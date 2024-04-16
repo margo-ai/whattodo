@@ -5,15 +5,15 @@ import "./todolist.scss";
 import { Todo } from "src/types/types";
 
 type Props = {
-  data: Todo[];
+  data: Todo[] | [];
   toggleTodo: (id: string) => void;
   deleteTodo: (id: string) => void;
 };
 
 export const TodoList = ({ data, toggleTodo, deleteTodo }: Props) => {
-  const tasks = data.map((todo) => {
+  const tasks = data?.map((todo) => {
     return <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />;
   });
 
-  return <ul className="list mb-3">{tasks.length === 0 ? "Congrats! Now you can rest!" : tasks}</ul>;
+  return <ul className="list mb-3">{!!data ? tasks : null}</ul>;
 };
