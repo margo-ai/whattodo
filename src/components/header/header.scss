@@ -1,27 +1,25 @@
-.app {
-    &__header {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        background-color: #ffffff;
-        border: 2px solid #00008B;
-        border-radius: 5px;
-        padding: 10px;
-    }
-    &__title {
-        font-weight: 700;
-        font-size: 40px;
-        margin-bottom: 0;
-    }
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  border: 2px solid #00008b;
+  border-radius: 5px;
+  padding: 10px;
+
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 770px) {
-    .app {
-        &__header {
-            padding: 5px;
-        }
-        &__title {
-            font-size: 27px;
-        }
+  .header {
+    padding: 5px;
+
+    &__title {
+      font-size: 27px;
     }
+  }
 }
